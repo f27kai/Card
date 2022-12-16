@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class = "text_theme">
+        <h2><a href="{% url 'viza' %}"><button class="custom-btn btn-14">Viza</button></a></h2>
+        <h2><a href="{% url 'elkart' %}"><button class="custom-btn btn-14">ЭлКарт</button></a></h2>
+  </div>
+
+<div class = "box_theme">
+
+    <a href="{% url 'create' %}"><button type="submit" class="custom-btn btn-10">Создать</button></a>
+
+{% for card in cards %}
+    <ul class="older">
+        <li><a href="{% url 'informations' card.pk %}">{{card.cardholder_name}}</a></li>
+    </ul>
+{% endfor %}
+
+</div>
+
+
+
+{% endblock %}

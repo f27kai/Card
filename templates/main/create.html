@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class = "text_theme">
+        <h2><a href="{% url 'viza' %}"><button class="custom-btn btn-14">Viza</button></a></h2>
+        <h2><a href="{% url 'elkart' %}"><button class="custom-btn btn-14">ЭлКарт</button></a></h2>
+</div>
+
+<div class = "box_theme">
+    <form method="post">
+        {% csrf_token %}
+        <ul class="first">
+            <li>{{form.as_p}}</li>
+        </ul>
+        <a href="{% url 'index' %}"><button class="custom-btn btn-5"><span>Назад</span></button></a>
+        <button type="submit" class="custom-btn btn-5"><span>Сохранить</span></button>
+    </form>
+</div>
+
+{% endblock %}

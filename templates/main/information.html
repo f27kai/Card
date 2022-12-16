@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class = "text_theme">
+        <h2><a href="{% url 'viza' %}"><button class="custom-btn btn-14">Viza</button></a></h2>
+        <h2><a href="{% url 'elkart' %}"><button class="custom-btn btn-14">ЭлКарт</button></a></h2>
+</div>
+
+
+<div class = "box_theme">
+    <ul class="border">
+        <li>Владелец карты: {{info.cardholder_name}}</li>
+        <li>Номер карты: {{info.number}}</li>
+        <li>Срок действия: {{info.expiry_date}}</li>
+        <li>CVV: {{info.CVV}}</li>
+        <li>Виды банковских карт: {{info.card_type}}</li>
+    </ul>
+    <a href="{% url 'index' %}"><button class="custom-btn btn-5"><span>Назад</span></button></a>
+    <a href="{% url 'update' info.pk %}"><button class="custom-btn btn-5"><span>Изменить</span></button></a>
+    <a href="{% url 'delete' info.pk %}"><button type="submit" class="custom-btn btn-7"><span>Удалить</span></button></a>
+</div>
+
+
+
+
+
+
+{% endblock %}
